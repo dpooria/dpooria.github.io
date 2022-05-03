@@ -25,6 +25,10 @@ body {
   color: var(--myorange);
 }
 
+.navbar nav {
+  display: none;
+}
+
 .navbar .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,12 +59,137 @@ section {
 }
 
 .left-col .subhead {
-  font-weight: normal;
+  text-align: center;
+}
+
+.left-col .subhead a {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
 }
 
 .left-col h1 {
   font-size: 2.5em;
   line-height: 1.3em;
   margin-top: 0.2em;
+}
+
+section.selected-section {
+  margin: 0.05em;
+  background: var(--myorange);
+  color: white;
+}
+
+section.selected-section a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+section.selected-section a:hover {
+  color: #444444;
+}
+
+section.selected-section h1 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 0.5em;
+  font-size: 2.2em;
+}
+
+section.selected-section .selected-images {
+  text-align: center;
+  padding: 0.75em 0.5em;
+  margin: 0.3em auto 2em auto;
+}
+
+section.selected-section .selected-images img {
+  width: 10em;
+  height: 10em;
+  padding: 0.2em;
+  border: 0.1em solid var(--myorange);
+  border-radius: 30%;
+}
+
+ul.selected-list {
+  margin: 0;
+  padding-left: 0.1em;
+  display: -ms-grid;
+  display: grid;
+}
+
+ul.selected-list li {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  position: relative;
+}
+
+ul.selected-list li:before {
+  content: '';
+  left: -2em;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/bullet.svg");
+  background-size: contain;
+  margin-right: 0.5em;
+}
+
+.navigate .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.navigate .navbar {
+  display: block;
+  padding: 1em;
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0.01em;
+}
+
+.navigate .navbar a:hover {
+  background-color: var(--myorange);
+  color: white;
+}
+
+.navigate .navbar a.active {
+  background-color: var(--myorange);
+  color: white;
+}
+
+.navigate .navbar .primary {
+  margin-right: 0.3em;
+  margin-bottom: 0.1em;
+}
+
+.navigate .navbar .primary a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0.3em 0.8em;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.navigate .navbar .secondary {
+  float: right;
+  padding: 0.1em 0.2em;
+  margin: 1em auto 0em auto;
+}
+
+.navigate .navbar .secondary a {
+  display: block;
+  float: left;
+  padding-right: 1em;
+  padding-left: 0.5em;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */
