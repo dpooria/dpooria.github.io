@@ -9,34 +9,70 @@ body {
   font-family: 'Roboto';
 }
 
-.navbar {
-  background: white;
+.navbar-top {
   padding: 1em;
 }
 
-.navbar .dpoorlogo {
+.navbar-top .dpoorlogo {
   text-decoration: none;
   font-weight: bold;
   color: black;
   font-size: 1.4em;
 }
 
-.navbar .dpoorlogo span {
+.navbar-top .dpoorlogo span {
   color: var(--myorange);
 }
 
-.navbar nav {
+.navbar-top nav.mobile-menu {
+  display: block;
+}
+
+.navbar-top nav {
+  background: white;
+  padding: 1em;
+  position: fixed;
+  z-index: 999;
+  width: 66%;
+  right: 0;
+  top: 0;
+  height: 100vh;
+}
+
+.navbar-top ul.primary-nav {
+  margin-top: 5em;
+}
+
+.navbar-top li a {
+  color: #444444;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+.navbar-top li a:hover {
+  font-weight: bold;
+}
+
+.navbar-top .mobile-menu-exit {
+  float: right;
+  margin: .5em;
+}
+
+.navbar-top nav {
   display: none;
 }
 
-.navbar .container {
+.navbar-top .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   place-content: space-between;
 }
 
-.navbar .mobile-menu {
+.navbar-top .mobile-menu {
   cursor: pointer;
 }
 
@@ -146,8 +182,7 @@ ul.selected-list li:before {
   display: block;
   padding: 1em;
   background-color: white;
-  overflow: hidden;
-  position: fixed;
+  position: inherit;
   bottom: 0;
   width: 100%;
   margin-bottom: 0;
@@ -183,6 +218,7 @@ ul.selected-list li:before {
   float: right;
   padding: 0.1em 0.2em;
   margin: 1em auto 0em auto;
+  text-align: center;
 }
 
 .navigate .navbar .secondary a {
@@ -191,5 +227,59 @@ ul.selected-list li:before {
   padding-right: 1em;
   padding-left: 0.5em;
   text-decoration: none;
+}
+
+.navigate .navbar .secondary img.researchgate {
+  width: 100%;
+  height: 1.5em;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+.mobile-menu-exit {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu,
+  .mobile-menu-exit {
+    display: none;
+  }
+  .navbar-top .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+  }
+  #pnav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    height: auto;
+    width: 100%;
+    position: unset;
+    padding: 0;
+  }
+  #pnav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #pnav ul.primary-nav {
+    margin: 0;
+  }
+  #pnav li.current a {
+    font-weight: bold;
+  }
+}
+
+img.hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

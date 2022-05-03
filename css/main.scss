@@ -11,8 +11,10 @@ body {
 
 }
 
-.navbar {
-    background: white;
+.navbar-top {
+
+    // margin: 0;
+    // display: block;
     padding: 1em;
 
     .dpoorlogo {
@@ -24,6 +26,47 @@ body {
         span {
             color: var(--myorange);
         }
+    }
+
+    nav.mobile-menu {
+        display: block;
+    }
+
+
+    nav {
+        background: white;
+        padding: 1em;
+        position: fixed;
+        z-index: 999;
+        width: 66%;
+        right: 0;
+        top: 0;
+        height: 100vh;
+    }
+
+
+    ul.primary-nav {
+        margin-top: 5em;
+    }
+
+    li {
+        a {
+            color: #444444;
+            text-decoration: none;
+            display: block;
+            padding: .5em;
+            font-size: 1.3em;
+            text-align: right;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .mobile-menu-exit {
+        float: right;
+        margin: .5em;
     }
 
     nav {
@@ -42,6 +85,9 @@ body {
 
 
 }
+
+
+
 
 a {
     color: #444444
@@ -159,8 +205,9 @@ ul.selected-list {
         display: block;
         padding: 1em;
         background-color: white;
-        overflow: hidden;
-        position: fixed;
+        // overflow: hidden;
+        // position: fixed;
+        position: inherit;
         bottom: 0;
         width: 100%;
         margin-bottom: 0;
@@ -198,7 +245,8 @@ ul.selected-list {
             float: right;
             padding: 0.1em 0.2em;
             margin: 1em auto 0em auto;
-            // margin-top: 0.5em;
+
+            text-align: center;
 
             a {
                 display: block;
@@ -207,10 +255,70 @@ ul.selected-list {
                 padding-right: 1em;
                 padding-left: 0.5em;
                 text-decoration: none;
-                // text-align: center;
 
+            }
+
+            img.researchgate {
+                width: 100%;
+                height: 1.5em;
             }
         }
     }
 
+}
+
+nav.menu-btn {
+    // position:fixed;
+    display: block;
+}
+
+
+.mobile-menu-exit {
+
+    cursor: pointer;
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .mobile-menu,
+    .mobile-menu-exit {
+        display: none;
+    }
+
+    .navbar-top {
+        .container {
+            display: grid;
+            grid-template-columns: 180px auto;
+            // justify-content: unset;
+        }
+    }
+
+    #pnav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        height: auto;
+        width: 100%;
+        position: unset;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        ul.primary-nav {
+            margin: 0;
+        }
+
+        li.current a {
+            font-weight: bold;
+        }
+
+    }
+
+}
+
+img.hide {
+    display: none;
 }
