@@ -1,5 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --myorange: rgb(228, 151, 7);
+}
+
 body {
-  background: #d8ebf0;
+  background: #f2f2f2;
   margin: 0;
+  font-family: 'Roboto';
+}
+
+.navbar {
+  background: white;
+  padding: 1em;
+}
+
+.navbar .dpoorlogo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.4em;
+}
+
+.navbar .dpoorlogo span {
+  color: var(--myorange);
+}
+
+.navbar nav {
+  display: none;
+}
+
+.navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+
+a {
+  color: #444444;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+
+.left-col .subhead {
+  font-weight: normal;
+}
+
+.left-col h1 {
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-top: 0.2em;
 }
 /*# sourceMappingURL=main.css.map */
