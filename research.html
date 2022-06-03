@@ -19,34 +19,53 @@
                 <ul class="primary-nav">
                     <li><a href="index.html">Home</a></li>
                     <li class="current"><a href="research.html">Research</a></li>
-                    <li ><a href="projects.html">Projects</a></li>
+                    <li><a href="projects.html">Projects</a></li>
 
                 </ul>
                 <ul class="secondary-nav">
                     <li><a href="mailto:dpooria75@gmail.com">Contact</a></li>
-                    <li ><a href="dpoor.html">About Me</a></li>
+                    <li><a href="dpoor.html">About Me</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    
+
 
     </section>
-    <section class="selected-section">
+    <section class="table-hero">
         <h1 class="title">Reaserch Works</h1>
         <div class="container">
             <ul class="selected-list">
                 <li>
-                    <a href="#">Reinforcement learning quantum phase transitions</a>
-                    <div class="selected-images">
-                        <img src="images/rl.png" alt="RL">
+                    <div class="dropdown">
+                        <button onclick="dropdown_func('rl-dropdown')" class="dropbtn">Reinforcement learning quantum
+                            phase
+                            transitions</button>
+                        <div id="rl-dropdown" class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
                     </div>
                 </li>
                 <li>
-                    <a href="#">Confusion on ultracold atoms</a>
-                    <div class="selected-images">
-                        <img src="images/rl.png" alt="Confusion">
-                    </div>
+                    <div class="dropdown">
+                        <button onclick="dropdown_func('confusion-dropdown')" class="dropbtn">Confusion on ultracold
+                            atoms</button>
+                        <div id="confusion-dropdown" class="dropdown-content">
+                            <button class="show" onclick="dropdown_func('confusion-cvae')">CVAE</button>
+                            <div id="confusion-cvae" class="dropdown-content">
+                                    <script
+                                        src="https://gist.github.com/dpooria/1de1c6f3552c2fe0e51c2e381d6927ee.js"></script>
+                            </div>
+                            <button class="show" onclick="dropdown_func('confusion-double')">Double Confusion</button>
+                            <div id="confusion-double" class="dropdown-content">
+                                    <script
+                                        src="https://gist.github.com/dpooria/1de1c6f3552c2fe0e51c2e381d6927ee.js"></script>
+                            </div>
+                           
+                        </div>
+
                 </li>
             </ul>
         </div>
@@ -97,6 +116,27 @@
             mobileBtn.classList.remove('hide')
 
         })
+
+        function dropdown_func(id) {
+            document.getElementById(id).classList.toggle("show");
+        }
+        // function toggle_gist(id) {
+        //     const gc = document.getElementById(id).getElementsByClassName('gist-container');
+        //     print(gc);
+        // }
+        // Close the dropdown if the user clicks outside of it
+        // window.onclick = function (e) {
+        //     if (!e.target.matches('.dropbtn')) {
+        //         var rl_dropdown = document.getElementById("rl-dropdown");
+        //         if (rl_dropdown.classList.contains('show')) {
+        //             rl_dropdown.classList.remove('show');
+        //         }
+        //         var confusion_dropdown = document.getElementById("confusion-dropdown");
+        //         if (confusion_dropdown.classList.contains('show')) {
+        //             confusion_dropdown.classList.remove('show');
+        //         }
+        //     }
+        // }
     </script>
 </body>
 
