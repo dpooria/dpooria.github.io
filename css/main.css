@@ -187,8 +187,8 @@ section.selected-section .selected-images {
 }
 
 section.selected-section .selected-images img {
-  width: 10em;
-  height: 10em;
+  width: 20em;
+  height: 20em;
   padding: 0.2em;
   border: 0.1em solid var(--myorange);
   border-radius: 30%;
@@ -315,6 +315,10 @@ ul.selected-list li:before {
   text-decoration: none;
 }
 
+.navigate .navbar .secondary a:hover {
+  background-color: inherit;
+}
+
 .navigate .navbar .secondary img.researchgate {
   width: 100%;
   height: 1.5em;
@@ -425,6 +429,7 @@ img.hide {
 
 .explain p a {
   display: inline;
+  text-decoration: underline;
 }
 
 .explain ol {
@@ -433,5 +438,14 @@ img.hide {
 
 .explain li a {
   display: inline;
+  text-decoration: underline;
+}
+
+.explain h2 a {
+  text-decoration: underline;
+}
+
+.me {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

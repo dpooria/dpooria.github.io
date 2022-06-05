@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dpoor|Home</title>
+    <title>dpoor</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
 <body>
@@ -29,47 +30,13 @@
             </nav>
         </div>
     </div>
-    <section class="hero">
-        <div class="container">
-            <div class="left-col">
-                <h1>Pooria Dabbaghi</h1>
-                <p class="subhead">
-                    I'm a condensed matter physics graduate student at
-                    <a href="https://sbu.ac.ir" target="_blank">Shahid Beheshti university</a>
-                    and my thesis is about detecting quantum phase transitions using
-                    machine learning.
-                </p>
-                <div class="hero-cta">
-                    <!-- <img src="#" alt="test"> -->
-                </div>
-            </div>
-        </div>
+
 
     </section>
-    <section class="selected-section">
-        <h1 class="title">Selected Works</h1>
-        <div class="container">
-            <ul class="selected-list">
-                <li>
-                    <a href="#">Reinforcement learning quantum phase transitions</a>
-                    <div class="selected-images">
-                        <img src="images/rl.png" alt="RL">
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Confusion on ultracold atoms</a>
-                    <div class="selected-images">
-                        <img src="images/rl.png" alt="Confusion">
-                    </div>
-                </li>
-                <li>
-                    <a href="#">AiBot</a>
-                    <div class="selected-images">
-                        <img src="images/robot.svg" alt="Aibot">
-                    </div>
-                </li>
-
-            </ul>
+    <section class="table-hero">
+        <h1 class="title">Pooria Dabbaghi</h1>
+        <div class="container me">
+            <img src="images/me1.jpg" alt="me" width="780" height="1100">
         </div>
     </section>
 
@@ -98,7 +65,9 @@
                     <a target="_blank" href="https://www.researchgate.net/profile/Pooria-Dabbaghi">
                         <img class="researchgate" src="images/researchgate.svg" alt="linkedin">
                     </a>
-
+                    <a target="_blank" href="#">
+                        <img src="images/logo.png" alt="dpoor">
+                    </a>
                 </div>
             </nav>
         </div>
@@ -118,6 +87,23 @@
             mobileBtn.classList.remove('hide')
 
         })
+
+        function dropdown_func(id) {
+            document.getElementById(id).classList.toggle("show");
+        }
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn') && !e.target.matches('.dropbtn2')) {
+                var rl_dropdown = document.getElementById("rl-dropdown");
+                if (rl_dropdown.classList.contains('show')) {
+                    rl_dropdown.classList.remove('show');
+                }
+                var confusion_dropdown = document.getElementById("confusion-dropdown");
+                if (confusion_dropdown.classList.contains('show')) {
+                    confusion_dropdown.classList.remove('show');
+                }
+            }
+        }
     </script>
 </body>
 

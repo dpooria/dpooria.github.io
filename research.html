@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dpoor|Home</title>
+    <title>dpoor|Research</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
 <body>
@@ -38,10 +39,12 @@
             <ul class="selected-list">
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('confusion-dropdown')" class="dropbtn">Confusion on ultracold
+                        <button onclick="dropdown_func('confusion-dropdown')"
+                            class="dropbtn confusion-dropbtn">Confusion on ultracold
                             atoms</button>
                         <div id="confusion-dropdown" class="dropdown-content">
-                            <button class="show" onclick="dropdown_func('confusion-double')">Double Confusion</button>
+                            <button class="show dropbtn2" onclick="dropdown_func('confusion-double')">Double
+                                Confusion</button>
                             <div id="confusion-double" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
@@ -49,16 +52,25 @@
                                         experiment to detect the topologocial phase transition of the Haldane model
                                     </h2>
                                     <p>
-
+                                        To implement the confusion scheme on this dataset a few modification has been
+                                        made to the original method, first as the data is high dimensional I've used a
+                                        deeper network with convolutional layers as oppossed to the shallow fully
+                                        connected network suggested by the paper.
+                                        Secondly the Haldane model in the phase &phi;=-&pi;/2 has two critical
+                                        frequencies, theoritical it is topologically trivial in &omega;<6.1 and &omega;>
+                                            6.8 and topological, C=-1, in between.
+                                            So we have a double phase transition on our hand and the universal <bf>W
+                                            </bf> shape here has two peaks in the middle showing two critical points.
                                     </p>
                                 </div>
+
                                 <script
                                     src="https://gist.github.com/dpooria/acc7c0a4bfcd4f84554c7424a358144b.js"></script>
                                 <script
-                                    src="https://gist.github.com/dpooria/acc7c0a4bfcd4f84554c7424a358144b.js"></script>
+                                    src="https://gist.github.com/dpooria/1832dd461f13d44ec5ea8744bdbcf9d7.js"></script>
                             </div>
 
-                            <button class="show" onclick="dropdown_func('dcn')">DCN</button>
+                            <button class="show dropbtn2" onclick="dropdown_func('dcn')">DCN</button>
                             <div id="dcn" class="dropdown-content">
                                 <div class="explain">
                                     <h2>Discriminatve Coperative netwroks on snapshots of ultra-cold atoms
@@ -68,7 +80,7 @@
                                             href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.176401">DCN
                                             method</a> to detect topological phase transition of the Haldane
                                         method from
-                                        snapshots of ultra-cold atoms experiment. The dataset is the same from the one
+                                        snapshots of the ultra-cold atoms experiment. The dataset is the same as the one
                                         used
                                         in
                                         the paper <a href="https://iopscience.iop.org/article/10.1088/2632-2153/abffe7">
@@ -84,7 +96,7 @@
                                         <li>
                                             Data being high dimensional and DCN method has been implemented only on
                                             low
-                                            dimensional (80) array of entanglement spectrum and one key difference
+                                            dimensional (80d) array of entanglement spectrum and one key difference
                                             from
                                             confusion method is the interpolation of data in continous parameter
                                             space
@@ -133,7 +145,7 @@
                                 <script
                                     src="https://gist.github.com/dpooria/a1720fd4a8628d0b655a1a96f3785aec.js"></script>
                             </div>
-                            <button class="show" onclick="dropdown_func('confusion-cvae')">CVAE</button>
+                            <button class="show dropbtn2" onclick="dropdown_func('confusion-cvae')">CVAE</button>
                             <div id="confusion-cvae" class="dropdown-content">
                                 <div class="explain">
                                     <h2>Generating Snapshots of Ultracold Quantum Gas Experiment with Variational
@@ -166,13 +178,48 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('rl-dropdown')" class="dropbtn">Reinforcement learning quantum
+                        <button onclick="dropdown_func('rl-dropdown')" class="dropbtn rl-dropbtn"
+                            id="rl-btn">Reinforcement learning
+                            quantum
                             phase
                             transitions</button>
                         <div id="rl-dropdown" class="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
+                            <button class="show dropbtn2" onclick="dropdown_func('rl-qlearning')">QLearning</button>
+                            <div id="rl-qlearning" class="dropdown-content">
+                                <div class="explain">
+                                    <h2>Reformulating the detection of quantum phase transition as a deep reinforcement
+                                        learning problem
+                                    </h2>
+
+                                    <p>
+                                        I defined the environment as a set of nodes living in the parameter space,
+                                        presenting the phase diagram of the many-body physical system under study. The
+                                        agent can take action to change the coordinates of these nodes to obtain the
+                                        physical system's phase diagram. The rewarding system for this environment is
+                                        defined as the performance of a shallow neural network trained with the
+                                        suggested phase diagram by the agent as an indicator of how well it is doing
+                                        (confusion scheme).
+                                        Here I used the QLearning method which requires a discrete action space.
+                                    </p>
+                                </div>
+                                <script
+                                    src="https://gist.github.com/dpooria/542b5e45a62fa658a94180818915fd0c.js"></script>
+                                <script
+                                    src="https://gist.github.com/dpooria/9a7a6da3e28b257f2eec22bd2d1c9495.js"></script>
+
+                            </div>
+                            <button class="show dropbtn2" onclick="dropdown_func('rl-sac')">SAC</button>
+                            <div id="rl-sac" class="dropdown-content">
+                                <div class="explain">
+                                    <h2>Soft Actor-Critic Learning Physics
+                                    </h2>
+
+                                    <p>
+                                        Coming soon...
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </li>
@@ -205,7 +252,9 @@
                     <a target="_blank" href="https://www.researchgate.net/profile/Pooria-Dabbaghi">
                         <img class="researchgate" src="images/researchgate.svg" alt="linkedin">
                     </a>
-
+                    <a target="_blank" href="#">
+                        <img src="images/logo.png" alt="dpoor">
+                    </a>
                 </div>
             </nav>
         </div>
@@ -229,23 +278,19 @@
         function dropdown_func(id) {
             document.getElementById(id).classList.toggle("show");
         }
-        // function toggle_gist(id) {
-        //     const gc = document.getElementById(id).getElementsByClassName('gist-container');
-        //     print(gc);
-        // }
         // Close the dropdown if the user clicks outside of it
-        // window.onclick = function (e) {
-        //     if (!e.target.matches('.dropbtn')) {
-        //         var rl_dropdown = document.getElementById("rl-dropdown");
-        //         if (rl_dropdown.classList.contains('show')) {
-        //             rl_dropdown.classList.remove('show');
-        //         }
-        //         var confusion_dropdown = document.getElementById("confusion-dropdown");
-        //         if (confusion_dropdown.classList.contains('show')) {
-        //             confusion_dropdown.classList.remove('show');
-        //         }
-        //     }
-        // }
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn') && !e.target.matches('.dropbtn2')) {
+                var rl_dropdown = document.getElementById("rl-dropdown");
+                if (rl_dropdown.classList.contains('show')) {
+                    rl_dropdown.classList.remove('show');
+                }
+                var confusion_dropdown = document.getElementById("confusion-dropdown");
+                if (confusion_dropdown.classList.contains('show')) {
+                    confusion_dropdown.classList.remove('show');
+                }
+            }
+        }
     </script>
 </body>
 

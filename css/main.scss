@@ -205,8 +205,8 @@ section.selected-section {
         margin: 0.3em auto 2em auto;
 
         img {
-            width: 10em;
-            height: 10em;
+            width: 20em;
+            height: 20em;
             padding: 0.2em;
             border: 0.1em solid var(--myorange);
             border-radius: 30%;
@@ -347,6 +347,11 @@ ul.selected-list {
                 text-decoration: none;
 
             }
+            a:hover{
+                background-color: inherit;
+                // width: 1.1em;
+                // height: 1.1em;
+            }
 
             img.researchgate {
                 width: 100%;
@@ -478,6 +483,7 @@ img.hide {
     p {
         a {
             display: inline;
+            text-decoration: underline;
         }
     }
     ol{
@@ -486,6 +492,25 @@ img.hide {
     li {
         a {
             display: inline;
+            text-decoration: underline;
         }
+    }
+    h2{
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.me{
+    text-align: center;
+    img{
+        // width: 80%;
+        // height: 800px;
+        // text-align: center;
+        // padding: 50%;
+        // margin-left: 10em;
+        // margin-right: 50%;
     }
 }
