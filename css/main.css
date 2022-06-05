@@ -448,4 +448,12 @@ img.hide {
 .me {
   text-align: center;
 }
+
+.me img {
+  width: 40%;
+  height: 30%;
+  padding: 0.2em;
+  border: 0.1em solid var(--myorange);
+  border-radius: 30%;
+}
 /*# sourceMappingURL=main.css.map */

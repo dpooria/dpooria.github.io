@@ -347,7 +347,8 @@ ul.selected-list {
                 text-decoration: none;
 
             }
-            a:hover{
+
+            a:hover {
                 background-color: inherit;
                 // width: 1.1em;
                 // height: 1.1em;
@@ -469,16 +470,16 @@ img.hide {
     display: block;
 }
 
-.dropdown-content{
-    .gist{
-        padding:1.1em;
+.dropdown-content {
+    .gist {
+        padding: 1.1em;
     }
 }
 
 .explain {
     color: #444444;
     font-size: 1.1em;
-    padding:1.1em;
+    padding: 1.1em;
 
     p {
         a {
@@ -486,31 +487,35 @@ img.hide {
             text-decoration: underline;
         }
     }
-    ol{
-        font-size: 0.9em;;
+
+    ol {
+        font-size: 0.9em;
+        ;
     }
+
     li {
         a {
             display: inline;
             text-decoration: underline;
         }
     }
-    h2{
-        a{
+
+    h2 {
+        a {
             text-decoration: underline;
         }
     }
 }
 
 
-.me{
+.me {
     text-align: center;
-    img{
-        // width: 80%;
-        // height: 800px;
-        // text-align: center;
-        // padding: 50%;
-        // margin-left: 10em;
-        // margin-right: 50%;
+
+    img {
+        width: 40%;
+        height: 30%;
+        padding: 0.2em;
+        border: 0.1em solid var(--myorange);
+        border-radius: 30%;
     }
 }
