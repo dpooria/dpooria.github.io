@@ -369,10 +369,6 @@ img.hide {
   display: none;
 }
 
-.cvae {
-  display: none;
-}
-
 .dropdown .dropbtn {
   cursor: pointer;
   font-size: 16px;
@@ -415,5 +411,27 @@ img.hide {
 
 .show {
   display: block;
+}
+
+.dropdown-content .gist {
+  padding: 1.1em;
+}
+
+.explain {
+  color: #444444;
+  font-size: 1.1em;
+  padding: 1.1em;
+}
+
+.explain p a {
+  display: inline;
+}
+
+.explain ol {
+  font-size: 0.9em;
+}
+
+.explain li a {
+  display: inline;
 }
 /*# sourceMappingURL=main.css.map */

@@ -414,10 +414,6 @@ img.hide {
     display: none;
 }
 
-.cvae {
-    display: none;
-}
-
 .dropdown .dropbtn {
     cursor: pointer;
     font-size: 16px;
@@ -446,7 +442,7 @@ img.hide {
     text-decoration: none;
     display: block;
     text-align: left;
-    border:none;
+    border: none;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -468,3 +464,28 @@ img.hide {
     display: block;
 }
 
+.dropdown-content{
+    .gist{
+        padding:1.1em;
+    }
+}
+
+.explain {
+    color: #444444;
+    font-size: 1.1em;
+    padding:1.1em;
+
+    p {
+        a {
+            display: inline;
+        }
+    }
+    ol{
+        font-size: 0.9em;;
+    }
+    li {
+        a {
+            display: inline;
+        }
+    }
+}

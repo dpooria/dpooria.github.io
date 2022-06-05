@@ -38,6 +38,134 @@
             <ul class="selected-list">
                 <li>
                     <div class="dropdown">
+                        <button onclick="dropdown_func('confusion-dropdown')" class="dropbtn">Confusion on ultracold
+                            atoms</button>
+                        <div id="confusion-dropdown" class="dropdown-content">
+                            <button class="show" onclick="dropdown_func('confusion-double')">Double Confusion</button>
+                            <div id="confusion-double" class="dropdown-content">
+                                <div class="explain">
+                                    <h2>
+                                        Implementation of the confusion scheme on snapshots of ultracold quantum gas
+                                        experiment to detect the topologocial phase transition of the Haldane model
+                                    </h2>
+                                    <p>
+
+                                    </p>
+                                </div>
+                                <script
+                                    src="https://gist.github.com/dpooria/acc7c0a4bfcd4f84554c7424a358144b.js"></script>
+                                <script
+                                    src="https://gist.github.com/dpooria/acc7c0a4bfcd4f84554c7424a358144b.js"></script>
+                            </div>
+
+                            <button class="show" onclick="dropdown_func('dcn')">DCN</button>
+                            <div id="dcn" class="dropdown-content">
+                                <div class="explain">
+                                    <h2>Discriminatve Coperative netwroks on snapshots of ultra-cold atoms
+                                    </h2>
+                                    <p>
+                                        This is a try to apply the <a
+                                            href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.176401">DCN
+                                            method</a> to detect topological phase transition of the Haldane
+                                        method from
+                                        snapshots of ultra-cold atoms experiment. The dataset is the same from the one
+                                        used
+                                        in
+                                        the paper <a href="https://iopscience.iop.org/article/10.1088/2632-2153/abffe7">
+                                            Unsupervised machine learning of topological phase transitions from
+                                            experimental
+                                            data </a> and you can access it from <a
+                                            href="https://zenodo.org/record/4459311">
+                                            here </a>.</p>
+                                    <p>
+                                        I suspect the problem is either
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Data being high dimensional and DCN method has been implemented only on
+                                            low
+                                            dimensional (80) array of entanglement spectrum and one key difference
+                                            from
+                                            confusion method is the interpolation of data in continous parameter
+                                            space
+                                            and
+                                            in their implementation they have used a linear interpolation that
+                                            simply
+                                            doesn't work on our images. I tried to overcome this issue by
+                                            implementing a
+                                            generative model with variational autoencoder with question neuron as
+                                            suggested
+                                            in <a
+                                                href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.010508">this
+                                                paper</a> and has been utilized to remove micromotions from this
+                                            dataset. In
+                                            my implementation I added two other question neurons for frequency and
+                                            phase
+                                            of
+                                            the images so you have a way to control the generated image parameters
+                                            but
+                                            this
+                                            didn't work either and there is no gurantee that the generated snapshots
+                                            contain
+                                            meaningful physical properties.
+                                        </li>
+                                        <li>
+                                            One issue that hasn't been addressed in the DCN method is that if the
+                                            guesser
+                                            model is trying to minimize the loss function of learner model from the
+                                            <a href="https://www.nature.com/articles/nphys4037"> confusion
+                                                method</a>
+                                            the
+                                            global minima of the loss function is where all labels are the same (the
+                                            boundary peaks of the universal <b>W</b> shape) and not the critical
+                                            point.
+                                            For
+                                            overcoming this issue I tried to make the guesser model to propose the
+                                            right
+                                            critical point by rewarding the higher variant labels but it just made
+                                            the
+                                            model to not learn anything.
+                                        </li>
+                                    </ol>
+                                </div>
+                                <script
+                                    src="https://gist.github.com/dpooria/0e6de7747a4a0c973dc333868f282c9e.js"></script>
+                                <script
+                                    src="https://gist.github.com/dpooria/a1720fd4a8628d0b655a1a96f3785aec.js"></script>
+                            </div>
+                            <button class="show" onclick="dropdown_func('confusion-cvae')">CVAE</button>
+                            <div id="confusion-cvae" class="dropdown-content">
+                                <div class="explain">
+                                    <h2>Generating Snapshots of Ultracold Quantum Gas Experiment with Variational
+                                        Autoencoders
+                                    </h2>
+
+                                    <p>
+                                        This is a try to generate new samples from <a
+                                            href="https://iopscience.iop.org/article/10.1088/2632-2153/abffe7">this
+                                            dataset</a> by adding two more
+                                        question neurons to the original model that has been used in order to
+                                        remove the micromotions phase. The idea is that if one can change the
+                                        micromotion of
+                                        sampled images with experiment why can't you just generate new images in the
+                                        desired parameters (with specific frequency and phase in our case).
+                                        The problem is that I couldn't find a clear way to evaluate the generated
+                                        images,
+                                        and
+                                        it raises the question wether the generated snapshots preserve meaningful
+                                        physical properties.
+                                        If you have any suggestion regarding this I would be happy to discuss this.
+                                    </p>
+                                </div>
+                                <script
+                                    src="https://gist.github.com/dpooria/1de1c6f3552c2fe0e51c2e381d6927ee.js"></script>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
                         <button onclick="dropdown_func('rl-dropdown')" class="dropbtn">Reinforcement learning quantum
                             phase
                             transitions</button>
@@ -47,25 +175,6 @@
                             <a href="#">Link 3</a>
                         </div>
                     </div>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <button onclick="dropdown_func('confusion-dropdown')" class="dropbtn">Confusion on ultracold
-                            atoms</button>
-                        <div id="confusion-dropdown" class="dropdown-content">
-                            <button class="show" onclick="dropdown_func('confusion-cvae')">CVAE</button>
-                            <div id="confusion-cvae" class="dropdown-content">
-                                    <script
-                                        src="https://gist.github.com/dpooria/1de1c6f3552c2fe0e51c2e381d6927ee.js"></script>
-                            </div>
-                            <button class="show" onclick="dropdown_func('confusion-double')">Double Confusion</button>
-                            <div id="confusion-double" class="dropdown-content">
-                                    <script
-                                        src="https://gist.github.com/dpooria/1de1c6f3552c2fe0e51c2e381d6927ee.js"></script>
-                            </div>
-                           
-                        </div>
-
                 </li>
             </ul>
         </div>
