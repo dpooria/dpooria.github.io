@@ -39,13 +39,13 @@
             <ul class="selected-list">
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('confusion-dropdown')"
+                        <button onclick="dropdown_func('confusion')"
                             class="dropbtn confusion-dropbtn">Confusion on ultracold
                             atoms</button>
-                        <div id="confusion-dropdown" class="dropdown-content">
-                            <button class="show dropbtn2" onclick="dropdown_func('confusion-double')">Double
+                        <div id="confusion" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('double-phase-transition')">Double
                                 Confusion</button>
-                            <div id="confusion-double" class="dropdown-content">
+                            <div id="double-phase-transition" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         Implementation of the confusion scheme on snapshots of ultracold quantum gas
@@ -146,8 +146,8 @@
                                 <script
                                     src="https://gist.github.com/dpooria/a1720fd4a8628d0b655a1a96f3785aec.js"></script>
                             </div>
-                            <button class="show dropbtn2" onclick="dropdown_func('confusion-cvae')">CVAE</button>
-                            <div id="confusion-cvae" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('cvae')">CVAE</button>
+                            <div id="cvae" class="dropdown-content">
                                 <div class="explain">
                                     <h2>Generating Snapshots of Ultracold Quantum Gas Experiment with Variational
                                         Autoencoders
@@ -179,12 +179,12 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('rl-dropdown')" class="dropbtn rl-dropbtn"
+                        <button onclick="dropdown_func('rl')" class="dropbtn rl-dropbtn"
                             id="rl-btn">Reinforcement learning
                             quantum
                             phase
                             transitions</button>
-                        <div id="rl-dropdown" class="dropdown-content">
+                        <div id="rl" class="dropdown-content">
                             <button class="show dropbtn2" onclick="dropdown_func('rl-qlearning')">QLearning</button>
                             <div id="rl-qlearning" class="dropdown-content">
                                 <div class="explain">
@@ -281,16 +281,31 @@
             document.getElementById(id).classList.toggle("show");
         }
         // Close the dropdown if the user clicks outside of it
-        window.onclick = function (e) {
-            if (!e.target.matches('.dropbtn') && !e.target.matches('.dropbtn2')) {
-                var rl_dropdown = document.getElementById("rl-dropdown");
-                if (rl_dropdown.classList.contains('show')) {
-                    rl_dropdown.classList.remove('show');
-                }
-                var confusion_dropdown = document.getElementById("confusion-dropdown");
-                if (confusion_dropdown.classList.contains('show')) {
-                    confusion_dropdown.classList.remove('show');
-                }
+        // window.onclick = function (e) {
+        //     if (!e.target.matches('.dropbtn') && !e.target.matches('.dropbtn2')) {
+        //         var rl_dropdown = document.getElementById("rl-dropdown");
+        //         if (rl_dropdown.classList.contains('show')) {
+        //             rl_dropdown.classList.remove('show');
+        //         }
+        //         var confusion_dropdown = document.getElementById("confusion-dropdown");
+        //         if (confusion_dropdown.classList.contains('show')) {
+        //             confusion_dropdown.classList.remove('show');
+        //         }
+        //     }
+        // }
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        if (urlParams.has('section')) {
+            sect = urlParams.get('section')
+            // console.log(sect)
+            // document.getElementById(sect).classList.toggle("show");
+            dropdown_func(sect)
+            if (urlParams.has('subsection')) {
+                subsect = urlParams.get('subsection')
+                // console.log(subsect)
+                // document.getElementById(sect).classList.toggle("show");
+                dropdown_func(subsect)
             }
         }
     </script>

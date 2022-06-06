@@ -39,9 +39,9 @@
             <ul class="selected-list">
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('aibot-dropdown')"
+                        <button onclick="dropdown_func('aibot')"
                             class="dropbtn confusion-dropbtn">AIBot</button>
-                        <div id="aibot-dropdown" class="dropdown-content">
+                        <div id="aibot" class="dropdown-content">
                             <div class="explain">
                                 <p>
                                     This was an interesting competition organized by Iran's national elites foundation
@@ -66,12 +66,12 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('freelance-dropdown')" class="dropbtn freenlance-dropbtn"
+                        <button onclick="dropdown_func('freelance')" class="dropbtn freenlance-dropbtn"
                             id="freelance-btn">Freelance Projects</button>
-                        <div id="freelance-dropdown" class="dropdown-content">
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-junglerl')">Jungle
+                        <div id="freelance" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('junglerl')">Jungle
                                 Scenario</button>
-                            <div id="freelance-junglerl" class="dropdown-content">
+                            <div id="junglerl" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a href="https://github.com/dpooria/cv-projects/tree/main/jungle_rl">Multiple
@@ -80,7 +80,12 @@
                                     </h2>
 
                                     <p>
-                                        The environment is defined as a 20x20 grid which 4 agents (animals) can take one
+                                        This is how I implemented a multi-agent Q-Learning problem using
+                                        Tensorflow-agents library which for overcoming the rewarding issues I passed
+                                        the
+                                        rewards as a part of the observation (state).
+                                        The environment is defined as a 20x20 grid which 4 agents (animals) can take
+                                        one
                                         of the 8 possible actions:
                                     <ol>
                                         <li>Move west</li>
@@ -92,12 +97,20 @@
                                         <li>Attack north</li>
                                         <li>Attack south</li>
                                     </ol>
+                                    The rewarding procedure is +1 for eating food, +3 for successful attack on
+                                    enemies,
+                                    -4 for getting attacked from enemies.
+                                    The agents and foods will get placed in the environment randomly and they
+                                    wouldn't
+                                    get eliminated for simplicity.
+                                    I have designed a command line UI for this to visualize the results using Curses
+                                    library.
                                     </p>
                                 </div>
                             </div>
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-ga')">Genetic
+                            <button class="show dropbtn2" onclick="dropdown_func('ga')">Genetic
                                 Algorithm</button>
-                            <div id="freelance-ga" class="dropdown-content">
+                            <div id="ga" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a href="https://github.com/dpooria/cv-projects/tree/main/genetic_algorithm">
@@ -107,9 +120,8 @@
 
                                 </div>
                             </div>
-
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-connect4')">Minimax</button>
-                            <div id="freelance-connect4" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('connect4')">Minimax</button>
+                            <div id="connect4" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a href="https://github.com/dpooria/cv-projects/tree/main/Connect4_minimax">
@@ -120,9 +132,9 @@
                                 </div>
                             </div>
 
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-gc')">Socket
+                            <button class="show dropbtn2" onclick="dropdown_func('groupchat')">Socket
                                 Programming</button>
-                            <div id="freelance-gc" class="dropdown-content">
+                            <div id="groupchat" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a href="https://github.com/dpooria/cv-projects/tree/main/group_chat">
@@ -133,8 +145,8 @@
                                 </div>
                             </div>
 
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-yolo')">Yolo</button>
-                            <div id="freelance-yolo" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('yolo')">Yolo</button>
+                            <div id="yolo" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a
@@ -145,8 +157,8 @@
                                 </div>
                             </div>
 
-                            <button class="show dropbtn2" onclick="dropdown_func('freelance-bees')">Sleepy Bees</button>
-                            <div id="freelance-bees" class="dropdown-content">
+                            <button class="show dropbtn2" onclick="dropdown_func('bees')">Sleepy Bees</button>
+                            <div id="bees" class="dropdown-content">
                                 <div class="explain">
                                     <h2>
                                         <a href="https://github.com/dpooria/cv-projects/tree/main/sleeping_bees">
@@ -161,9 +173,9 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('comphys-dropdown')" class="dropbtn freenlance-dropbtn"
+                        <button onclick="dropdown_func('comphys')" class="dropbtn freenlance-dropbtn"
                             id="comphys-btn">Computational Physics</button>
-                        <div id="comphys-dropdown" class="dropdown-content">
+                        <div id="comphys" class="dropdown-content">
                             <div class="explain">
                                 <h2>
                                     <a
@@ -179,9 +191,8 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('fdm-dropdown')" class="dropbtn freenlance-dropbtn"
-                            id="comphys-btn">FDM</button>
-                        <div id="fdm-dropdown" class="dropdown-content">
+                        <button onclick="dropdown_func('fdm')" class="dropbtn freenlance-dropbtn">FDM</button>
+                        <div id="fdm" class="dropdown-content">
                             <div class="explain">
                                 <h2>
                                     <a href="https://github.com/dpooria/cv-projects/tree/main/FDM_LaplaceEq">
@@ -248,17 +259,20 @@
         function dropdown_func(id) {
             document.getElementById(id).classList.toggle("show");
         }
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (e) {
-            if (!e.target.matches('.dropbtn') && !e.target.matches('.dropbtn2')) {
-                var rl_dropdown = document.getElementById("rl-dropdown");
-                if (rl_dropdown.classList.contains('show')) {
-                    rl_dropdown.classList.remove('show');
-                }
-                var confusion_dropdown = document.getElementById("confusion-dropdown");
-                if (confusion_dropdown.classList.contains('show')) {
-                    confusion_dropdown.classList.remove('show');
-                }
+
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        if (urlParams.has('section')) {
+            sect = urlParams.get('section')
+            console.log(sect)
+            // document.getElementById(sect).classList.toggle("show");
+            dropdown_func(sect)
+            if (urlParams.has('subsection')) {
+                subsect = urlParams.get('subsection')
+                console.log(subsect)
+                // document.getElementById(sect).classList.toggle("show");
+                dropdown_func(subsect)
             }
         }
     </script>
