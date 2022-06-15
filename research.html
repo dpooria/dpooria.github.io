@@ -39,8 +39,8 @@
             <ul class="selected-list">
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('confusion')"
-                            class="dropbtn confusion-dropbtn">Confusion on ultracold
+                        <button onclick="dropdown_func('confusion')" class="dropbtn confusion-dropbtn">Confusion on
+                            ultracold
                             atoms</button>
                         <div id="confusion" class="dropdown-content">
                             <button class="show dropbtn2" onclick="dropdown_func('double-phase-transition')">Double
@@ -111,16 +111,14 @@
                                             in <a
                                                 href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.010508">this
                                                 paper</a> and has been utilized to remove micromotions from this
-                                            dataset. In
-                                            my implementation I added two other question neurons for frequency and
+                                            dataset as well. I added two more question neurons for frequency and
                                             phase
-                                            of
-                                            the images so you have a way to control the generated image parameters
-                                            but
-                                            this
-                                            didn't work either and there is no guarantee that the generated snapshots
+                                            which
+                                            the snapshots has been taken in, and in this way you can control the
+                                            generated image parameters
+                                            but there is no guarantee that the generated snapshots
                                             contain
-                                            meaningful physical properties.
+                                            meaningful physical properties (at least I couldn't find a way).
                                         </li>
                                         <li>
                                             One issue that hasn't been addressed in the DCN method is that if the
@@ -161,7 +159,7 @@
                                         remove the micromotions phase. The idea is that if one can change the
                                         micromotion of
                                         sampled images with experiment why can't you just generate new images in the
-                                        desired parameters (with specific frequency and phase in our case).
+                                        desired parameters (with specific frequencies and phases in our case).
                                         The problem is that I couldn't find a clear way to evaluate the generated
                                         images,
                                         and
@@ -179,8 +177,8 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="dropdown_func('rl')" class="dropbtn rl-dropbtn"
-                            id="rl-btn">Reinforcement learning
+                        <button onclick="dropdown_func('rl')" class="dropbtn rl-dropbtn" id="rl-btn">Reinforcement
+                            learning
                             quantum
                             phase
                             transitions</button>
